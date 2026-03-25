@@ -11,3 +11,10 @@ Führe dabei ein Review der Stories auf Testbarkeit und konsistenz der Anforderu
 Bedingungen:
 Latein wird nur für die Oberfläche der Anwendung verwenden. Userstories und sonstige Dokumentationen in Deutsch und für den Quellcode 
 Englisch, außer Deutsch ist besser für die Verständlichkeit.
+
+
+Verfeinerung nach Review
+
+@Orchestrator Verfeinere die existierenden Userstories in /spezifikation/userStories anhand der Anmerkungen aus der review.md. Führe 
+dannach ein neues Review der Stories auf Testbarkeit und konsistenz der Anforderungen aus. Schreibe die Ergebnisse in 
+/spezifikation/review/review_01.md

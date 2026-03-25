@@ -10,12 +10,19 @@ Als Benutzer möchte ich nach Eingabe zweier römischer Zahlen und Auswahl einer
 - Bei Division durch Null wird eine entsprechende Fehlermeldung angezeigt ("DIVISIO PER ZERO")
 - Das Ergebnis darf nicht größer als 3999 sein (oberes Limit römischer Zahlen)
 - Bei Überschreitung des Limits wird "LIMITUM EXCESSUM" angezeigt
+- Berechnung erfolgt innerhalb von 100ms
+- Enter-Taste im Eingabefeld löst Berechnung aus (wenn beide Operanden und Operation vorhanden)
+- Fehlermeldungen sind für Screenreader lesbar (ARIA live regions)
 
 ## Technische Anforderungen
 - Konvertierungsfunktion: Römisch → Arabisch
 - Rechenoperationen auf arabischen Zahlen
 - Konvertierungsfunktion: Arabisch → Römisch
 - Fehlerbehandlung für ungültige Eingaben und Grenzfälle
+- Performance: Berechnung muss < 100ms dauern (inklusive Konvertierung)
+- Keyboard-Event-Handler für Enter-Taste
+- Fehler-Logging für Debugging (konsolidierte Fehlerprotokollierung)
+- ARIA live region für dynamische Fehlermeldungen
 
 ## Testfälle
 1. XII + V → XVII
@@ -25,3 +32,6 @@ Als Benutzer möchte ich nach Eingabe zweier römischer Zahlen und Auswahl einer
 5. Ungültige Eingabe → "ERRATA INPUT"
 6. Division durch Null → "DIVISIO PER ZERO"
 7. Ergebnis > 3999 → "LIMITUM EXCESSUM"
+8. Berechnungszeit messen → < 100ms
+9. Enter-Taste drücken bei vollständiger Eingabe → Berechnung wird ausgelöst
+10. Fehlermeldung wird für Screenreader ausgegeben (ARIA live region)
