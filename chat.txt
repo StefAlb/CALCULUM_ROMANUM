@@ -6,11 +6,12 @@ eine Desktop App für Windows werden. Zum beginn erzeuge mir unter dem Ordner /s
 und speichere diese da. Jede Userstory soll dabei in einer eigenen *.md Datei geschrieben werden.
 
 
-Führe dabei ein Review der Stories auf Testbarkeit und konsistenz der Anforderungen aus und passe die Stories direkt an.
+Führe dabei ein Review der Stories auf Testbarkeit und konsistenz der Anforderungen aus und halte die Ergebnisse unter 
+/spezifikation/review/review_01.md fest.
 
 Bedingungen:
-Latein wird nur für die Oberfläche der Anwendung verwenden. Userstories und sonstige Dokumentationen in Deutsch und für den Quellcode 
-Englisch, außer Deutsch ist besser für die Verständlichkeit.
+Latein wird nur für die Oberfläche der Anwendung verwenden. Userstories und sonstige Dokumentationen werden in Deutsch geschrieben 
+und für den Quellcode wird Englisch verwendet, außer wenn Deutsch für eine bessere Verständlichkeit notwendig ist.
 
 
 Verfeinerung nach Review
