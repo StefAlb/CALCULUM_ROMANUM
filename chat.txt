@@ -99,3 +99,28 @@ Implementiere die Desktop-Anwendung "CALCULUM ROMANUM" schrittweise gemäß dem 
 - Offene Punkte oder Entscheidungen, die Klärung benötigen
 
 Beginne mit Phase 1 und warte nach jeder Phase auf meine Bestätigung, bevor du fortfährst.
+
+
+## Test
+@Orchestrator Führe einen Test der Anwendung durch und prüfe folgende Aspekte:
+
+1. AKZEPTANZKRITERIEN
+   - Vergleiche die implementierte Funktionalität mit den Akzeptanzkriterien der User Stories [spezifikation/userStories]
+   - Dokumentiere für jede User Story: erfüllt / teilweise erfüllt / nicht erfüllt
+
+2. ARCHITEKTURKONZEPT
+   - Verifiziere, dass die Implementierung dem Architekturkonzept [spezifikation/Architekturkonzept] entspricht
+   - Prüfe insbesondere: [konkrete Architektur-Aspekte auflisten, z.B. Schichten, Schnittstellen, Datenfluss]
+
+3. ABWEICHUNGEN
+   - Protokolliere alle festgestellten Abweichungen im folgenden Format:
+     * User Story/Architektur-Element: [Name]
+     * Erwartetes Verhalten: [Beschreibung]
+     * Tatsächliches Verhalten: [Beschreibung]
+     * Schweregrad: [kritisch/mittel/niedrig]
+
+Erstelle am Ende eine Zusammenfassung mit:
+- Gesamtzahl geprüfter Items
+- Anzahl erfüllter vs. nicht erfüllter Kriterien
+- Liste der kritischen Abweichungen
+- Empfohlene nächste Schritte
