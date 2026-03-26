@@ -47,6 +47,9 @@ npm run tauri:build
 - `npm run lint` - ESLint ausführen
 - `npm run format` - Code formatieren
 - `npm run test` - Playwright E2E-Tests ausführen
+- `npm run test:unit` - Vitest Unit-Tests im Watch-Modus
+- `npm run test:unit:run` - Vitest Unit-Tests einmalig ausführen
+- `npm run test:unit:coverage` - Unit-Tests mit Coverage-Bericht
 
 ## Projektstruktur
 
@@ -85,12 +88,13 @@ project-root/
 - [x] Basis-Styles & CSS Variables
 - [x] Lateinische UI-Texte als Konstanten
 
-### Phase 2: Core Services
-- [ ] Validation Service
-- [ ] Conversion Service
-- [ ] Arithmetic Engine
-- [ ] Logging Service
-- [ ] History Service
+### Phase 2: Core Services ✅
+- [x] Validation Service (Echtzeit-Validierung, Regex, Längen-Check)
+- [x] Conversion Service (Römisch ↔ Arabisch mit Error-Throwing)
+- [x] Arithmetic Engine (vier Operationen, Error-Handling)
+- [x] Logging Service (Console + einheitliches Format)
+- [x] History Service (In-Memory, max 10 Einträge)
+- [x] Unit-Tests mit Vitest (alle Services getestet)
 
 ### Phase 3: UI-Komponenten
 - [ ] Input Component
