@@ -96,26 +96,29 @@ project-root/
 - [x] History Service (In-Memory, max 10 Einträge)
 - [x] Unit-Tests mit Vitest (alle Services getestet)
 
-### Phase 3: UI-Komponenten
-- [ ] Input Component
-- [ ] Operation Buttons
-- [ ] Calculator Button
-- [ ] Clear Buttons
-- [ ] History Component
-- [ ] Formula Display
+### Phase 3: UI-Komponenten ✅
+- [x] InputField Component (Echtzeit-Validierung, ARIA-Feedback)
+- [x] OperationSelector Component (ADDERE, SUBTRAHERE, MULTIPLICARE, DIVIDERE)
+- [x] CalculateButton Component (CALCULARE)
+- [x] ClearButtons Component (CLEAR, CLEAR ENTRY, Escape-Key)
+- [x] FormulaDisplay Component (Live-Update, lateinische Operatoren)
+- [x] HistoryPanel Component (In-Memory, max 10 Einträge)
 
-### Phase 4: State Management & Integration
-- [ ] Zustand Store
-- [ ] Custom Hooks
-- [ ] Component Integration
-- [ ] ARIA Live Regions
-- [ ] Keyboard Navigation
+### Phase 4: State Management & Integration ✅
+- [x] Zustand Store (calculatorStore.ts)
+- [x] Custom Hooks (useCalculator, useHistory)
+- [x] Component Integration (alle Komponenten an Store gebunden)
+- [x] ARIA Live Regions (polite/assertive für Screenreader)
+- [x] Keyboard Navigation (Tab, Enter, Space, Escape)
+- [x] Unit-Tests für Store-Logik
 
-### Phase 5: E2E-Tests
-- [ ] Playwright Setup
-- [ ] Testfälle für User Stories
-- [ ] Accessibility-Tests
-- [ ] Performance-Tests
+### Phase 5: E2E-Tests ✅
+- [x] Playwright Setup (Fixtures, Konfiguration)
+- [x] Testfälle für alle 7 User Stories (82 Tests)
+- [x] Accessibility-Tests (WCAG 2.1 AA Compliance)
+- [x] Performance-Tests (<100ms, <50ms, <200ms Thresholds)
+- [x] Integrationstests (End-to-End Workflows)
+- [x] Test-Berichte und Coverage
 
 ## Accessibility
 
