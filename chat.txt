@@ -65,4 +65,37 @@ Format: Markdown-Dokument mit klaren Abschnitten und Überschriften.
 Falls Informationen fehlen oder Unklarheiten bestehen, stelle bitte gezielte Rückfragen, bevor du das Konzept erstellst. Ziel ist alle
 User Stories vollständig umzusetzen.
 
-Lege die Spezifiktation unter /spezifikation/Architekturkonzept ab.
+Lege die Spezifiktation unter /spezifikation/Architekturkonzept.md ab.
+
+
+Implementierung
+@Orchestrator 
+
+Implementiere die Desktop-Anwendung "CALCULUM ROMANUM" schrittweise gemäß dem Architekturkonzept unter `/spezifikation/Architekturkonzept.md`.
+
+**Deine Rolle:** Du bist der Lead Developer und erstellst eine produktionstaugliche Implementierung.
+
+**Aufgaben:**
+1. Analysiere zuerst das Architekturkonzept und die User Stories unter `/spezifikation/userStories/`
+2. Erstelle eine Implementierungs-Roadmap mit Priorisierung
+3. Implementiere die Anwendung in dieser Reihenfolge:
+   - Phase 1: Projekt-Setup (Tauri + React + TypeScript)
+   - Phase 2: Core Services (Validation, Conversion, Arithmetic)
+   - Phase 3: UI-Komponenten mit lateinischen Texten
+   - Phase 4: State Management & Integration
+   - Phase 5: E2E-Tests mit Playwright
+
+**Anforderungen:**
+- Alle User Stories (01-07) müssen vollständig implementiert sein
+- WCAG 2.1 AA Accessibility-Compliance
+- Performance-Constraints einhalten (<100ms Berechnung, <200ms Initial Render)
+- Lateinische UI-Texte durchgängig (keine englischen Texte in der UI)
+- In-Memory-Historie ohne Persistenz
+- Logging via Console + optional Datei im Dev-Modus
+
+**Output pro Phase:**
+- Implementierter Code mit Dateipfaden
+- Kurze Zusammenfassung der Änderungen
+- Offene Punkte oder Entscheidungen, die Klärung benötigen
+
+Beginne mit Phase 1 und warte nach jeder Phase auf meine Bestätigung, bevor du fortfährst.

@@ -1,0 +1,123 @@
+/* ============================================
+   CALCULUM ROMANUM - CSS Variables
+   Römisch-antikes Design-System
+   ============================================ */
+
+:root {
+  /* Farbpalette - Römisch/Antik */
+  --color-marble-bg: #f5f5dc;
+  --color-marble-light: #faf8f0;
+  --color-stone-dark: #2c241b;
+  --color-stone-medium: #4a3f35;
+  --color-stone-light: #6b5e4f;
+  --color-gold-primary: #c9a227;
+  --color-gold-light: #e6c84d;
+  --color-gold-dark: #9a7b1a;
+  --color-patina: #5d7a5d;
+  --color-patina-dark: #3d5a3d;
+  --color-crimson: #8b1538;
+  --color-crimson-light: #a8244a;
+  --color-error: #b71c1c;
+  --color-success: #2e7d32;
+  --color-warning: #f57c00;
+
+  /* Textfarben */
+  --color-text-primary: var(--color-stone-dark);
+  --color-text-secondary: var(--color-stone-medium);
+  --color-text-light: var(--color-stone-light);
+  --color-text-on-dark: var(--color-marble-bg);
+  --color-text-on-gold: var(--color-stone-dark);
+  --color-text-on-crimson: var(--color-marble-bg);
+
+  /* Hintergrundfarben */
+  --bg-primary: var(--color-marble-bg);
+  --bg-secondary: var(--color-marble-light);
+  --bg-panel: #ffffff;
+  --bg-input: #ffffff;
+  --bg-button: var(--color-gold-primary);
+  --bg-button-hover: var(--color-gold-light);
+  --bg-button-active: var(--color-gold-dark);
+  --bg-button-selected: var(--color-patina);
+  --bg-error: #ffebee;
+  --bg-success: #e8f5e9;
+
+  /* Border Colors */
+  --border-color: var(--color-stone-light);
+  --border-color-focus: var(--color-gold-primary);
+  --border-color-error: var(--color-error);
+  --border-color-selected: var(--color-patina);
+
+  /* Schatten */
+  --shadow-sm: 0 1px 3px rgba(44, 36, 27, 0.12);
+  --shadow-md: 0 4px 6px rgba(44, 36, 27, 0.15);
+  --shadow-lg: 0 10px 15px rgba(44, 36, 27, 0.2);
+  --shadow-inner: inset 0 2px 4px rgba(44, 36, 27, 0.1);
+
+  /* Typography */
+  --font-family-heading: 'IM Fell English', serif;
+  --font-family-body: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-mono: 'Roboto Mono', monospace;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 350ms ease;
+
+  /* Z-Index Scale */
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal: 300;
+  --z-tooltip: 400;
+
+  /* Minima für WCAG 2.1 AA */
+  --min-contrast-ratio: 4.5;
+  --min-focus-visible-outline: 2px;
+
+  /* Layout */
+  --header-height: 80px;
+  --footer-height: 40px;
+  --sidebar-width: 280px;
+
+  /* Fokus-Indikator */
+  --focus-outline: var(--min-focus-visible-outline) solid var(--color-gold-primary);
+  --focus-outline-offset: 2px;
+}
+
+/* Dark Mode Support (optional, für Dev) */
+@media (prefers-color-scheme: dark) {
+  /* Kann später erweitert werden */
+}
