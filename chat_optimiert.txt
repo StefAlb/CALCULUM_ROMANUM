@@ -1,3 +1,10 @@
+Analysiere diesen Prompt und gib Feedback zu:
+- Was ist gut?
+- Was kann verbessert werden?
+- Wie könnte der Prompt präziser formuliert werden?
+
+Prompt: "HIER_EINFÜGEN"
+
 START
 
 @Orchestrator Ich möchte einen "Römisch/Lateinischen" Taschenrechner App bauen für die Grundrechenarten. Das besondere soll sein, 
