@@ -21,8 +21,12 @@ Als Benutzer möchte ich nach Eingabe zweier römischer Zahlen und Auswahl einer
 - Fehlerbehandlung für ungültige Eingaben und Grenzfälle
 - Performance: Berechnung muss < 100ms dauern (inklusive Konvertierung)
 - Keyboard-Event-Handler für Enter-Taste
-- Fehler-Logging für Debugging (konsolidierte Fehlerprotokollierung)
 - ARIA live region für dynamische Fehlermeldungen
+- Logging: Berechnungen und Fehler werden protokolliert im Format "[TIMESTAMP] [LEVEL] [MESSAGE]"
+  - INFO: [TIMESTAMP] [INFO] [CALCULATION] [OPERAND1] [OPERATOR] [OPERAND2] = [RESULT]
+  - ERROR: [TIMESTAMP] [ERROR] [DIVISION_BY_ZERO]
+  - ERROR: [TIMESTAMP] [ERROR] [LIMIT_EXCEEDED]
+  - ERROR: [TIMESTAMP] [ERROR] [INVALID_INPUT] [INPUT]
 
 ## Testfälle
 1. XII + V → XVII

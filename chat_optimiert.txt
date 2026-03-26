@@ -7,7 +7,7 @@ und speichere diese da. Jede Userstory soll dabei in einer eigenen *.md Datei ge
 
 
 Führe dabei ein Review der Stories auf Testbarkeit und konsistenz der Anforderungen aus und halte die Ergebnisse unter 
-/spezifikation/review/review_00.md fest.
+/spezifikation/review/review.md fest.
 
 Bedingungen:
 Latein wird nur für die Oberfläche der Anwendung verwenden. Userstories und sonstige Dokumentationen werden in Deutsch geschrieben 
@@ -22,11 +22,22 @@ dannach ein neues Review der Stories auf Testbarkeit und konsistenz der Anforder
 
 Verfeinerung nach 2.Review
 
-@Orchestrator In /spezifikation/review/review_01.md wurden Empfehlungen gegeben, die noch zu klären sind. Passe die existierenden 
-Userstories so an:
-    - keine Persistence, die Historie wird nach Beendigung das Programs nicht gespeichert
-    - Mindestfenstergröße wie empfohlen
-    - Logging wie im Bsp 
-ühre 
-dannach ein neues Review der Stories auf Testbarkeit und konsistenz der Anforderungen aus. Schreibe die Ergebnisse in 
-/spezifikation/review/review_02.md    
+@Orchestrator Basierend auf den Empfehlungen aus /spezifikation/review/review_01.md passen 
+wir die existierenden Userstories in /spezifikation/userStories wie folgt an:
+
+1. **Keine Persistence**: Die Anwendung speichert keine Historie. Nach Programmbeendigung 
+   gehen alle Daten verloren. Dies muss in allen relevanten Userstories berücksichtigt werden.
+
+2. **Mindestfenstergröße**: Implementiere die in review_01.md empfohlene Mindestfenstergröße 
+   [GRÖSSE_EINFÜGEN, z.B. 800x600 Pixel]. Dies muss in den UI-bezogenen Userstories spezifiziert werden.
+
+3. **Logging**: Implementiere Logging gemäß dem Beispiel aus [DATEI_EINFÜGEN oder REVIEW_SEITE]. 
+   Das Logging soll folgende Ereignisse erfassen: [LISTE DER ZU LOGGENDEN EREIGNISSE].
+
+Nach der Anpassung führe ein neues Review der Userstories durch mit Fokus auf:
+- Testbarkeit jeder Userstory
+- Konsistenz der Anforderungen untereinander
+- Vollständigkeit der Spezifikation
+
+Schreibe die Review-Ergebnisse, **festgestellten Probleme** und Empfehlungen in 
+/spezifikation/review/review_02.md

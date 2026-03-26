@@ -18,7 +18,7 @@ Als Benutzer möchte ich die aktuelle Eingabe oder das gesamte Rechner-Display l
 - UI-Update nach Löschen
 - Keyboard-Event-Handler für Escape-Taste
 - ARIA-Labels für Buttons (aria-label mit lateinischer Beschriftung)
-- Event-Logging für Clear-Aktionen (optional, für Debugging)
+- Logging: Löschen-Aktionen werden protokolliert im Format "[TIMESTAMP] [INFO] [CLEAR_ACTION] [TYPE]" (TYPE: FULL oder ENTRY)
 
 ## Testfälle
 1. Nach Eingabe von "XII" und Klick auf "CLEAR ENTRY" → Eingabefeld ist leer

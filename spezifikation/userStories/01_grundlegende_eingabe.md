@@ -18,6 +18,7 @@ Als Benutzer möchte ich römische Zahlen (I, V, X, L, C, D, M) in das Rechner-F
 - Automatische Umwandlung in Großbuchstaben bei der Anzeige
 - Tastatureingabe-Event-Handler mit Validierung
 - Barrierefreiheit: Eingabefeld ist über Tab-Taste erreichbar und hat korrekte ARIA-Labels
+- Logging: Validierungsfehler werden protokolliert im Format "[TIMESTAMP] [ERROR] [VALIDATION_ERROR] [INPUT]"
 
 ## Testfälle
 1. Gültige Eingabe: "XII" → Wird akzeptiert

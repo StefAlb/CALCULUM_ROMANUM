@@ -8,21 +8,20 @@ Als Benutzer möchte ich eine benutzerfreundliche Desktop-Anwendung mit klarem L
 - Alle Buttons und Labels sind in Latein beschriftet
 - Das Layout ist übersichtlich und intuitiv
 - Die Schriftart ist gut lesbar (mindestens 16px für normalen Text)
-- Das Fenster ist in der Größe veränderbar (optional: festes Mindestfenster)
-- Dunkles/Helles Theme ist möglich (optional)
+- Das Fenster hat eine Mindestgröße von 800x600 Pixeln und ist darüber hinaus veränderbar
 - Mindestkontrastverhältnis von 4.5:1 für Text (WCAG 2.1 AA)
 - Fokus-Indikatoren sind für alle interaktiven Elemente sichtbar
 - UI-Rendering erfolgt innerhalb von 200ms beim Start
 
 ## Technische Anforderungen
 - Desktop-Framework (z.B. Electron, Tauri, oder nativ)
-- Responsive Layout
+- Responsive Layout mit Mindestfenstergröße 800x600 Pixeln
 - Lateinische UI-Texte als Ressource-Datei oder Konstanten
 - Windows-kompatibles Executable
 - WCAG 2.1 AA Konformität für Barrierefreiheit
 - Fokus-Management für Tastaturnavigation
 - Performance: Initial Rendering < 200ms
-- Konsolidierte Fehlerprotokollierung für UI-Fehler
+- Logging: UI-Fehler werden protokolliert im Format "[TIMESTAMP] [ERROR] [UI_ERROR] [MESSAGE]"
 
 ## Testfälle
 1. Anwendung starten → Titel "CALCULUM ROMANUM" ist sichtbar

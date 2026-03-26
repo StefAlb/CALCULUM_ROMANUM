@@ -19,6 +19,7 @@ Als Benutzer möchte ich die aktuelle Berechnung als Formel in römischen Zahlen
 - Performance: Update muss < 50ms dauern
 - ARIA live region für dynamische Inhaltsänderungen
 - Korrekte semantische HTML-Struktur für Screenreader
+- Logging: UI-Updates werden nicht protokolliert (nur bei Fehlern: "[TIMESTAMP] [ERROR] [UI_UPDATE_ERROR] [MESSAGE]")
 
 ## Testfälle
 1. Eingabe "XII", Operation "ADDERE", Eingabe "V" → Anzeige: "XII ET V ="

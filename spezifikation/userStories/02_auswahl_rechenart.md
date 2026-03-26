@@ -18,6 +18,7 @@ Als Benutzer möchte ich zwischen den vier Grundrechenarten (Addition, Subtrakti
 - Lateinische Beschriftungen als Konstanten definiert
 - Keyboard-Event-Handler für Button-Interaktion
 - ARIA-Labels für Screenreader (role="button", aria-pressed für ausgewählten Zustand)
+- Logging: Operationswechsel werden protokolliert im Format "[TIMESTAMP] [INFO] [OPERATION_CHANGED] [OPERATION]"
 
 ## Testfälle
 1. Klick auf "ADDERE" → Operation wird auf Addition gesetzt
