@@ -13,6 +13,7 @@ export default defineConfig({
       '@styles': path.resolve(__dirname, './src/renderer/styles'),
       '@types': path.resolve(__dirname, './src/renderer/types'),
       '@constants': path.resolve(__dirname, './src/renderer/constants'),
+      '@store': path.resolve(__dirname, './src/renderer/store'),
       '@common': path.resolve(__dirname, './src/common'),
     },
   },
@@ -20,11 +21,13 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: path.resolve(__dirname, 'src/renderer/index.html'),
+        main: path.resolve(__dirname, 'index.html'),
       },
     },
   },
   server: {
     port: 5173,
+    strictPort: true,
+    cors: true,
   },
 });
