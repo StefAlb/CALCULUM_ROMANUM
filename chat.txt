@@ -68,7 +68,7 @@ User Stories vollständig umzusetzen.
 Lege die Spezifiktation unter /spezifikation/Architekturkonzept.md ab.
 
 
-Implementierung
+6 Implementierung
 @Orchestrator 
 
 Implementiere die Desktop-Anwendung "CALCULUM ROMANUM" schrittweise gemäß dem Architekturkonzept unter `/spezifikation/Architekturkonzept.md`.
@@ -124,3 +124,15 @@ Erstelle am Ende eine Zusammenfassung mit:
 - Anzahl erfüllter vs. nicht erfüllter Kriterien
 - Liste der kritischen Abweichungen
 - Empfohlene nächste Schritte
+
+
+6-First AppStart
+-- war ein "primitiver" promt .. hat mir aber brav die installation.md erstellt
+um die Anwendung hier ausführen zu können, muss npm installiert sein, oder? Kannst du das machen oder alternativ mir eine Anleitung generieren?
+
+
+7_UI_Refactoring_Konzept
+So, wenn wir uns nun die UI ansehen, sieht diese sehr gewöhnungsbedürftig aus.
+Erstelle ein UI-Konzept anhander der Anforderungen unter /spezifikation/userStories das sich an modernen 
+Taschenrechner-Apps orientiert und lege es unter /spezifikation/ui ab
+
