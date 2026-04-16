@@ -3,7 +3,7 @@
  * Führt Berechnungen mit römischen Zahlen durch
  */
 
-import { Operation } from '@types';
+import { Operation } from '@renderer/types';
 import { Logger } from './logging';
 import { romanToArabic, arabicToRoman } from './conversion';
 import { MAX_ROMAN_VALUE } from '@common/constants';

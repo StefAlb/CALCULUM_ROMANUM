@@ -1,27 +1,23 @@
 import React from 'react';
 import { OperationSymbols, LatinTexts, ErrorMessages } from '@constants/latinTexts';
-import { Operation } from '@types';
 import { useCalculator } from '@hooks/useCalculator';
 
 /**
  * FormulaDisplay Component
- * Zeigt "XII ET V = XVII" oder Fehlermeldungen an
- * Nutzt den Zustand-Store für State-Management
+ * Zeigt den Rechenweg an: "XII ET V = XVII" oder Fehlermeldungen
+ * Wird über dem Hauptdisplay angezeigt
  */
 export const FormulaDisplay: React.FC = () => {
   const { operand1, operand2, operation, result, error } = useCalculator();
 
   // Operator-Symbol aus lateinischer Map
-  const opSymbol = operation
-    ? {
-        ADDERE: OperationSymbols.ADD,
-        SUBTRAHERE: OperationSymbols.SUBTRACT,
-        MULTIPLICARE: OperationSymbols.MULTIPLY,
-        DIVIDERE: OperationSymbols.DIVIDE,
-      }[operation]
+  const opSymbol = operation === 'ADDERE' ? OperationSymbols.ADD
+    : operation === 'SUBTRAHERE' ? OperationSymbols.SUBTRACT
+    : operation === 'MULTIPLICARE' ? OperationSymbols.MULTIPLY
+    : operation === 'DIVIDERE' ? OperationSymbols.DIVIDE
     : '';
 
-  // Zusammensetzen der Formel (ohne Ergebnis, falls noch nicht berechnet)
+  // Zusammensetzen der Formel
   const formula = `${operand1 || ''} ${opSymbol || ''} ${operand2 || ''}`.trim();
 
   // Fehlermeldung bestimmen
@@ -29,7 +25,7 @@ export const FormulaDisplay: React.FC = () => {
 
   return (
     <div
-      className="formula-display"
+      className="calculation-display"
       aria-live="polite"
       aria-atomic="true"
       role="status"
@@ -38,9 +34,10 @@ export const FormulaDisplay: React.FC = () => {
         <span className="error">{errorMessage}</span>
       ) : (
         <>
-          <span className="formula">{formula}</span>{' '}
+          <span className="formula">{formula}</span>
           {result && (
             <>
+              {' '}
               <span className="equals">{LatinTexts.EQUALS_SIGN}</span>{' '}
               <span className="result">{result}</span>
             </>

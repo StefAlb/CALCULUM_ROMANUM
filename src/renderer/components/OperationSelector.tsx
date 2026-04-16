@@ -1,17 +1,17 @@
 import React from 'react';
 import { LatinTexts } from '@constants/latinTexts';
-import { Operation } from '@types';
 import { useCalculator } from '@hooks/useCalculator';
 
 /**
  * OperationSelector Component
  * Vier Operation-Buttons (ADDERE, SUBTRAHERE, MULTIPLICARE, DIVIDERE)
- * Nutzt den Zustand-Store für State-Management
+ * Toggle-Verhalten: Nur eine Operation gleichzeitig aktiv
+ * Layout: 4 Spalten in einer Reihe
  */
 export const OperationSelector: React.FC = () => {
   const { operation, setOperation } = useCalculator();
 
-  const operations: { key: Operation; label: string }[] = [
+  const operations: { key: string; label: string }[] = [
     { key: 'ADDERE', label: LatinTexts.OPERATION_ADD },
     { key: 'SUBTRAHERE', label: LatinTexts.OPERATION_SUBTRACT },
     { key: 'MULTIPLICARE', label: LatinTexts.OPERATION_MULTIPLY },
@@ -19,14 +19,14 @@ export const OperationSelector: React.FC = () => {
   ];
 
   return (
-    <div role="group" aria-label={LatinTexts.ARIA_OPERATION_BUTTON} className="operation-selector">
+    <div className="operation-buttons-grid" role="group" aria-label={LatinTexts.ARIA_OPERATION_BUTTON}>
       {operations.map(({ key, label }) => (
         <button
           key={key}
           type="button"
-          className={`op-button ${operation === key ? 'op-selected' : ''}`}
+          className={`operation-button ${operation === key ? 'op-selected' : ''}`}
           aria-pressed={operation === key}
-          onClick={() => setOperation(key)}
+          onClick={() => setOperation(key as any)}
         >
           {label}
         </button>

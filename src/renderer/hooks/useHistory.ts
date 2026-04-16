@@ -1,27 +1,31 @@
-import { useState, useCallback } from 'react';
-import { useCalculatorStore } from '@store/calculatorStore';
+import { useCalculatorStore } from '../store/calculatorStore';
 
 /**
  * useHistory Hook
  * Verwaltet die Historie der Berechnungen
  */
 export const useHistory = () => {
-  const { history, addHistory, clearHistory } = useCalculatorStore();
+  const {
+    history,
+    showHistory,
+    addHistoryEntry,
+    toggleHistory,
+    loadFromHistory
+  } = useCalculatorStore();
 
-  const addToHistory = useCallback((entry: {
-    currentValue: string;
-    previousValue: string;
-    operation: string;
-    result: string;
-    timestamp: Date;
-  }) => {
-    addHistory(entry);
-  }, [addHistory]);
+  const loadEntry = (entry: any) => {
+    loadFromHistory(entry);
+  };
+
+  const isEmpty = history.length === 0;
 
   return {
-    history,
-    addToHistory,
-    clearHistory,
+    entries: history,
+    isEmpty,
+    showHistory,
+    addEntry: addHistoryEntry,
+    loadEntry,
+    toggle: toggleHistory,
   };
 };
 

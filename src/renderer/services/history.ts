@@ -3,7 +3,7 @@
  * In-Memory-Historie für Berechnungen (keine Persistenz)
  */
 
-import { HistoryEntry, Operation } from '@types';
+import { HistoryEntry, Operation } from '@renderer/types';
 import { MAX_HISTORY_ENTRIES } from '@common/constants';
 import { Logger } from './logging';
 

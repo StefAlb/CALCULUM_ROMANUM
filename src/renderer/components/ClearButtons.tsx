@@ -5,11 +5,12 @@ import { Logger } from '@services/logging';
 
 /**
  * ClearButtons Component
- * CLEAR- und CLEAR ENTRY-Buttons + Escape-Key-Handler
- * Nutzt den Zustand-Store für State-Management
+ * CLEAR, CLEAR ENTRY und HISTORIA Buttons
+ * Escape-Taste löscht den aktuellen Eingabewert
+ * Layout gemäß Wireframe: [CLEAR] [CLEAR ENTRY] [HISTORIA]
  */
 export const ClearButtons: React.FC = () => {
-  const { clearAll, clearEntry } = useCalculator();
+  const { clearAll, clearEntry, toggleHistory, showHistory } = useCalculator();
 
   // Escape-Taste löscht den aktuellen Eingabewert (wie CLEAR ENTRY)
   useEffect(() => {
@@ -25,10 +26,10 @@ export const ClearButtons: React.FC = () => {
   }, [clearEntry]);
 
   return (
-    <div className="clear-buttons">
+    <div className="action-buttons-bar">
       <button
         type="button"
-        className="clear-button"
+        className="action-button action-button-clear"
         onClick={clearAll}
         aria-label={LatinTexts.ARIA_CLEAR}
       >
@@ -36,11 +37,20 @@ export const ClearButtons: React.FC = () => {
       </button>
       <button
         type="button"
-        className="clear-entry-button"
+        className="action-button action-button-clear-entry"
         onClick={clearEntry}
         aria-label={LatinTexts.ARIA_CLEAR_ENTRY}
       >
         {LatinTexts.BUTTON_CLEAR_ENTRY}
+      </button>
+      <button
+        type="button"
+        className="action-button action-button-history"
+        onClick={toggleHistory}
+        aria-label={LatinTexts.ARIA_HISTORY}
+        aria-pressed={showHistory}
+      >
+        {LatinTexts.BUTTON_HISTORY}
       </button>
     </div>
   );

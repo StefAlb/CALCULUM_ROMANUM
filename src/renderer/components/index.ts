@@ -9,3 +9,4 @@ export { CalculateButton } from './CalculateButton';
 export { ClearButtons } from './ClearButtons';
 export { FormulaDisplay } from './FormulaDisplay';
 export { HistoryPanel } from './HistoryPanel';
+export { NumberButtons } from './NumberButtons';

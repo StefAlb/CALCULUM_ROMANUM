@@ -3,8 +3,8 @@
  * Validiert römische Zahleingaben in Echtzeit
  */
 
-import { ROMAN_INPUT_REGEX, MAX_INPUT_LENGTH } from '@common/constants';
-import { ValidationStatus, ErrorType } from '@types';
+import { MAX_INPUT_LENGTH } from '@common/constants';
+import { ValidationStatus, ErrorType } from '@renderer/types';
 import { Logger } from './logging';
 
 /**
@@ -12,7 +12,7 @@ import { Logger } from './logging';
  * @param input - Die zu validierende Eingabe
  * @returns Validierungsstatus
  */
-export const validateInput = (input: string): ValidationStatus => {
+export const validateRomanInput = (input: string): ValidationStatus => {
   const startTime = performance.now();
 
   // Leere Eingabe
@@ -29,9 +29,16 @@ export const validateInput = (input: string): ValidationStatus => {
     return 'INVALID';
   }
 
-  // Zeichenprüfung (nur gültige römische Ziffern)
-  if (!ROMAN_INPUT_REGEX.test(input)) {
+  // Zeichenprüfung (nur gültige römische Ziffern: I, V, X, L, C, D, M)
+  const validChars = /^[IVXLCDM]+$/;
+  if (!validChars.test(input.toUpperCase())) {
     Logger.logWarn('VALIDATION_ERROR', `Invalid characters in input: ${input}`);
+    return 'INVALID';
+  }
+
+  // Syntax-Validierung: Prüfe ob es eine gültige römische Zahl ist
+  if (!isValidRomanNumber(input)) {
+    Logger.logWarn('VALIDATION_ERROR', `Invalid roman numeral syntax: ${input}`);
     return 'INVALID';
   }
 
@@ -42,6 +49,67 @@ export const validateInput = (input: string): ValidationStatus => {
   }
 
   return 'VALID';
+};
+
+/**
+ * Prüft ob eine Eingabe ein gültiges römische Zahl darstellt
+ * (nicht nur gültige Zeichen, sondern auch korrekte Syntax)
+ * @param input - Die Eingabe
+ * @returns true wenn es eine gültige römische Zahl ist
+ */
+export const isValidRomanNumber = (input: string): boolean => {
+  if (!input || input.length === 0) return false;
+
+  const normalized = input.toUpperCase();
+
+  // Leere Eingabe ist nicht gültig
+  if (normalized.length === 0) return false;
+
+  // Einfache Syntax-Validierung:
+  // Römische Zahlen dürfen nicht mehr als 3 gleiche Ziffern hintereinander haben
+  // (außer M, das bis zu 3 mal vorkommen kann für Zahlen <= 3999)
+  const repeatedChars = normalized.match(/(I|X|C|M)\1{3,}/);
+  if (repeatedChars) {
+    return false;
+  }
+
+  // V, L, D dürfen nicht wiederholt werden
+  const repeatedVD = normalized.match(/(V|L|D)\1/);
+  if (repeatedVD) {
+    return false;
+  }
+
+  // Weitere Syntax-Regeln für römische Zahlen
+  // I kann nur vor V und X stehen
+  const invalidI = normalized.match(/I{0,3}(L|C|D|M)/);
+  if (invalidI && !normalized.match(/^IV|IX/)) {
+    // Wenn I vor L, C, D, M steht aber nicht IV oder IX ist
+    const iPositions = [];
+    for (let i = 0; i < normalized.length; i++) {
+      if (normalized[i] === 'I') iPositions.push(i);
+    }
+    for (const pos of iPositions) {
+      if (pos + 1 < normalized.length) {
+        const nextChar = normalized[pos + 1];
+        if (nextChar === 'L' || nextChar === 'C' || nextChar === 'D' || nextChar === 'M') {
+          if (normalized.slice(pos, pos + 2) !== 'IV' && normalized.slice(pos, pos + 2) !== 'IX') {
+            return false;
+          }
+        }
+      }
+    }
+  }
+
+  return true;
+};
+
+/**
+ * Validiert eine Eingabe auf gültige römische Ziffern (Alias für Kompatibilität)
+ * @param input - Die zu validierende Eingabe
+ * @returns Validierungsstatus
+ */
+export const validateInput = (input: string): ValidationStatus => {
+  return validateRomanInput(input);
 };
 
 /**
@@ -63,35 +131,9 @@ export const normalizeInput = (input: string): string => {
 };
 
 /**
- * Prüft ob die Eingabe ein gültiges römische Zahl darstellt
- * (nicht nur gültige Zeichen, sondern auch korrekte Syntax)
- * @param input - Die Eingabe
- * @returns true wenn es eine gültige römische Zahl ist
+ * Alias für isValidRomanNumber (für Kompatibilität)
  */
-export const isValidRomanNumeral = (input: string): boolean => {
-  if (!input || input.length === 0) return false;
-
-  const normalized = normalizeInput(input);
-
-  // Leere Eingabe ist nicht gültig
-  if (normalized.length === 0) return false;
-
-  // Einfache Syntax-Validierung:
-  // Römische Zahlen dürfen nicht mehr als 3 gleiche Ziffern hintereinander haben
-  // (außer M, das bis zu 4 mal vorkommen kann für Zahlen > 3999, aber wir limitieren auf 3999)
-  const repeatedChars = normalized.match(/(I|X|C|M)\1{3,}/);
-  if (repeatedChars) {
-    return false;
-  }
-
-  // V, L, D dürfen nicht wiederholt werden
-  const repeatedVD = normalized.match(/(V|L|D)\1/);
-  if (repeatedVD) {
-    return false;
-  }
-
-  return true;
-};
+export const isValidRomanNumeral = isValidRomanNumber;
 
 /**
  * Erzeugt eine Fehlermeldung basierend auf dem Validierungsstatus

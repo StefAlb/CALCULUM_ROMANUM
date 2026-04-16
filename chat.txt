@@ -136,3 +136,9 @@ So, wenn wir uns nun die UI ansehen, sieht diese sehr gewöhnungsbedürftig aus.
 Erstelle ein UI-Konzept anhander der Anforderungen unter /spezifikation/userStories das sich an modernen 
 Taschenrechner-Apps orientiert und lege es unter /spezifikation/ui ab
 
+8_UI_Refactoring_Umsetzung
+-- schritt 1
+Überarbeite die UI. Unter /spezifikation/ui findest du die Anleitung dazu.
+
+-- schritt 2
+Passe die UI an die Vorgaben in /spezifikation/ui/02_wireframes an

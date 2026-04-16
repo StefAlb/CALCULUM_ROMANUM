@@ -5,20 +5,22 @@ import { useCalculator } from '@hooks/useCalculator';
 /**
  * CalculateButton Component
  * "CALCULARE"-Button, löst die Berechnung aus
- * Nutzt den Zustand-Store für State-Management
+ * Hervorgehobenes Design, deaktiviert wenn keine Berechnung möglich
  */
 export const CalculateButton: React.FC = () => {
   const { canCalculate, calculate } = useCalculator();
 
   return (
-    <button
-      type="button"
-      className="calc-button"
-      disabled={!canCalculate}
-      aria-label={LatinTexts.ARIA_CALCULATE}
-      onClick={calculate}
-    >
-      {LatinTexts.BUTTON_CALCULATE}
-    </button>
+    <div className="calculate-button-container">
+      <button
+        type="button"
+        className="calculate-button"
+        disabled={!canCalculate}
+        aria-label={LatinTexts.ARIA_CALCULATE}
+        onClick={calculate}
+      >
+        {LatinTexts.BUTTON_CALCULATE}
+      </button>
+    </div>
   );
 };
