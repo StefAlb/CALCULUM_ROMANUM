@@ -145,7 +145,19 @@ Passe die UI an die Vorgaben in /spezifikation/ui/02_wireframes an
 
 
 
-#### 10 - Project-Infos
+#### 9 - Project-Infos
 Datei per Hand erstellt und dann füllen lassen mit:
 
 wir müssen das project-info.promttemplate für dieses Projekt verbessern, was würdest du vorschlagen?
+
+
+#### 10 - Latein Prüfung
+
+1.
+was sagt die Projektspezifikation zu den Beschriftungen auf der Oberfläche?
+
+2.
+prüfe bitte ob das korrekt umgesetzt wurde
+
+3.
+ja, was ist mit "Clear", ist das wirklich korrektes Latein?
