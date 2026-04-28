@@ -142,3 +142,10 @@ Taschenrechner-Apps orientiert und lege es unter /spezifikation/ui ab
 
 -- schritt 2
 Passe die UI an die Vorgaben in /spezifikation/ui/02_wireframes an
+
+
+
+#### 10 - Project-Infos
+Datei per Hand erstellt und dann füllen lassen mit:
+
+wir müssen das project-info.promttemplate für dieses Projekt verbessern, was würdest du vorschlagen?
