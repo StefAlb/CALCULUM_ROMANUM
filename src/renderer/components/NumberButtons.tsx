@@ -50,19 +50,19 @@ export const NumberButtons: React.FC = () => {
         type="button"
         className="number-button number-button-placeholder"
         disabled
-        aria-label="Leer"
+        aria-label={LatinTexts.ARIA_EMPTY}
       />
       <button
         type="button"
         className="number-button number-button-placeholder"
         disabled
-        aria-label="Leer"
+        aria-label={LatinTexts.ARIA_EMPTY}
       />
       <button
         type="button"
         className="number-button number-button-placeholder"
         disabled
-        aria-label="Leer"
+        aria-label={LatinTexts.ARIA_EMPTY}
       />
     </div>
   );

@@ -48,7 +48,7 @@ export const HistoryPanel: React.FC = () => {
       <button
         type="button"
         className="settings-button"
-        aria-label="Einstellungen (zukünftig)"
+        aria-label={LatinTexts.ARIA_SETTINGS}
         disabled
       >
         ⚙

@@ -22,10 +22,10 @@ export const LatinTexts = {
 
   // Buttons
   BUTTON_CALCULATE: 'CALCULARE',
-  BUTTON_CLEAR: 'CLEAR',
-  BUTTON_CLEAR_ENTRY: 'CLEAR ENTRY',
+  BUTTON_CLEAR: 'DELE',
+  BUTTON_CLEAR_ENTRY: 'DELE HANC',
   BUTTON_HISTORY: 'HISTORIA',
-  BUTTON_HISTORY_CLOSE: 'HISTORIA (Schließen)',
+  BUTTON_HISTORY_CLOSE: 'CLAUDE',
   BUTTON_CLOSE: 'CLAUDERE',
   BUTTON_LOAD: 'CUMULARE',
 
@@ -54,17 +54,19 @@ export const LatinTexts = {
   HISTORY_EMPTY: 'Nulla calculationes adhuc',
   HISTORY_LOAD_HINT: 'Tange ut cumulaveris',
 
-  // Accessibility Labels
-  ARIA_INPUT: 'Eingabe römischer Zahl',
-  ARIA_INPUT_FIELD: 'Römische Zahl eingeben',
-  ARIA_NUMBER_BUTTONS: 'Ziffern-Buttons',
-  ARIA_OPERATION_BUTTON: 'Operation wählen',
-  ARIA_CALCULATE: 'Berechnung ausführen',
-  ARIA_CLEAR: 'Alle Eingaben löschen',
-  ARIA_CLEAR_ENTRY: 'Aktuelle Eingabe löschen',
-  ARIA_HISTORY: 'Berechnungshistorie anzeigen',
-  ARIA_RESULT: 'Berechnungsergebnis',
-  ARIA_ERROR: 'Fehlermeldung',
+  // Accessibility Labels (Latein)
+  ARIA_INPUT: 'Numerum Romanum inscribe',
+  ARIA_INPUT_FIELD: 'Numerum Romanum inscribe',
+  ARIA_NUMBER_BUTTONS: 'Digiti',
+  ARIA_OPERATION_BUTTON: 'Operationem elige',
+  ARIA_CALCULATE: 'Calculationem perfice',
+  ARIA_CLEAR: 'Omnes entradas dele',
+  ARIA_CLEAR_ENTRY: 'Entradam currentem dele',
+  ARIA_HISTORY: 'Historiam calculationum',
+  ARIA_RESULT: 'Resultatum calculationis',
+  ARIA_ERROR: 'Nuntius erroris',
+  ARIA_EMPTY: 'Vacuum',
+  ARIA_SETTINGS: 'Configurationes',
 
   // Statusnachrichten
   STATUS_READY: 'Paratus sum',
