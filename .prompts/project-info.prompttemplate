@@ -1,0 +1,231 @@
+# Projekt-Info
+
+<!-- Zentrale Projektinformationen für alle AI-Agenten -->
+
+## ⚠️ Antwort-Präfix (HÖCHSTE PRIORITÄT)
+**Jede Antwort MUSS mit "HoHo Houdi ... " beginnen.**
+
+---
+
+## 📱 Projekt-Identität
+
+**Name:** CALCULUM ROMANUM  
+**Beschreibung:** Ein römischer Taschenrechner als Desktop-Anwendung  
+**Version:** 1.0.0  
+**Jahr:** 2026
+
+---
+
+## 🏗️ Architektur
+
+**Architektur-Stil:** Clean Architecture mit Domain-Driven Design (DDD)  
+**Desktop-Framework:** Tauri (Rust Backend + WebView)  
+**Frontend:** React 18 + TypeScript  
+**State Management:** Zustand  
+**Build Tool:** Vite  
+**Styling:** Custom CSS mit CSS Variables (kein Framework)
+
+---
+
+## 🎯 Kern-Prinzipien
+
+- **Test-First:** Immer zuerst Tests schreiben (Red-Green-Refactor)
+- **Clean Code:** SOLID-Prinzipien
+- **Methoden:** Max. 10-15 Zeilen
+- **Klassen:** Max. 300 Zeilen
+- **TypeScript:** Strikt (kein `any`, strenge Typisierung)
+- **Komponenten:** Funktionskomponenten mit Hooks (keine Class Components)
+- **Services:** Reine Funktionen ohne Side Effects
+
+---
+
+## 📁 Verzeichnis-Struktur
+
+```
+/project-root/
+├── src/
+│   ├── main/              # Tauri Rust Backend
+│   ├── renderer/          # React/TS Frontend
+│   │   ├── components/    # UI Components
+│   │   ├── services/      # Validation, Conversion, History, Logging
+│   │   ├── hooks/         # Custom React Hooks
+│   │   ├── styles/        # CSS Files & Variables
+│   │   ├── store/         # Zustand State Management
+│   │   ├── types/         # TypeScript Interfaces/Types
+│   │   ├── constants/     # Zentrale Konstanten
+│   │   └── services/      # API Services
+│   └── common/            # Shared utilities, constants
+├── tests/
+│   └── e2e/               # Playwright E2E Tests
+├── spezifikation/
+│   ├── userStories/       # User Stories ([NUMMER]-Title.md)
+│   ├── ui/                # UI-Konzept und Spezifikation
+│   ├── review/            # Code Reviews
+│   └── Architekturkonzept.md  # Single Source of Truth
+├── scripts/               # Build/Dev Scripts
+├── .theia/                # Theia IDE Konfiguration
+└── .prompts/              # AI Prompt Templates
+```
+
+---
+
+## 🛠️ Build & Test Commands
+
+### Development
+```bash
+npm run dev              # Vite Development Server
+npm run dev:wait         # Dev Server mit Wait-Script (für Tauri)
+npm run tauri:dev        # Tauri Development Build
+```
+
+### Production
+```bash
+npm run build            # TypeScript + Vite Production Build
+npm run tauri:build      # Tauri Production Build (Rust)
+npm run preview          # Production Preview Server
+```
+
+### Testing
+```bash
+npm run test             # E2E Tests (Playwright)
+npm run test:ui          # E2E Tests mit Playwright UI
+npm run test:unit        # Unit Tests (Vitest, watch mode)
+npm run test:unit:run    # Unit Tests (einmalig)
+npm run test:unit:coverage # Unit Tests mit Coverage
+```
+
+### Code Quality
+```bash
+npm run lint             # ESLint Check
+npm run lint:fix         # ESLint Auto-Fix
+npm run format           # Prettier Format
+```
+
+### Tauri CLI
+```bash
+npm run tauri            # Tauri CLI Commands
+```
+
+---
+
+## ⚡ Performance-Constraints
+
+| Metrik | Limit | Beschreibung |
+|--------|-------|--------------|
+| Berechnung | <100 ms | Römisches Ergebnis berechnen |
+| Live-Update | <50 ms | Formelanzeige aktualisieren |
+| Initial Render | <200 ms | App-Start bis UI ready |
+| Historie Load | <100 ms | Historie laden und anzeigen |
+| Eingabe-Validierung | <10 ms | Echtzeit-Validierung |
+
+---
+
+## 🎨 UI/UX Anforderungen
+
+### Latein-UI (HÖCHSTE PRIORITÄT)
+- **Alle** benutzer sichtbaren Texte müssen auf Latein sein
+- Beispiele: `ADDERE`, `SUBTRAHERE`, `MULTIPLICARE`, `DIVIDERE`, `CALCULARE`, `CLEAR`, `HISTORIA`
+- Keine englischen UI-Texte im finalen Build
+- Zentrale Text-Verwaltung (ähnlich i18n, aber nur "Locale" = Latein)
+
+### Accessibility (WCAG 2.1 AA)
+- Kontrastverhältnisse ≥ 4.5:1 (normal), ≥ 3:1 (large text)
+- ARIA-Live-Regions für dynamische Inhalte (Ergebnisse, Fehler)
+- Vollständige Tastaturnavigation (Tab, Enter, Escape)
+- Fokus-Indikatoren sichtbar
+- Case-insensitive Eingabe (I/i, V/v, etc.)
+
+### Fehlermeldungen (Latein)
+- `ERRATA INPUT` - Ungültige Eingabe
+- `DIVISIO PER ZERO` - Division durch Null
+- `LIMITUM EXCESSUM` - Ergebnis zu groß (>3999)
+
+### Eingabe-Validierung
+- Maximale Länge: 15 Zeichen
+- PreventDefault für ungültige Zeichen + visuelles Feedback
+- Echtzeit-Validierung ohne UI-Blockierung
+
+---
+
+## 📋 Coding-Standards
+
+### TypeScript
+- `strict: true` in tsconfig
+- Kein `any` - immer explizite Typen
+- Interfaces für Props, Services, Events
+- Enums für Status/Operationen
+
+### React Components
+- Funktionskomponenten mit TypeScript
+- Custom Hooks für Logik-Wiederverwendung
+- Zustand für globalen State (nicht Redux)
+- Props-Validierung via TypeScript Interfaces
+
+### CSS/Styling
+- CSS Variables für Farben, Spacing, Typography
+- BEM-ähnliche Naming Convention
+- Responsive Design (minimale Fenstergröße: 800×600)
+- Keine CSS-Frameworks (Custom Styling für "römisch-antiken" Look)
+
+### Testing
+- **E2E:** Playwright für User Story Coverage
+- **Unit:** Vitest für Service/Logic Tests
+- **Test-First:** Tests vor Implementation schreiben
+- **Accessibility-Tests:** Playwright Accessibility Plugin
+
+### Logging
+- Dev-Modus: Console + optionale Datei (tauri-plugin-log)
+- Production: Console nur für Fehler
+- Logge: Eingaben, Operationen, Berechnungen, Fehler
+
+---
+
+## 🔄 Datenfluss
+
+```
+UI (React Components)
+    ↓
+State Manager (Zustand Store)
+    ↓
+Validation Service
+    ↓
+Conversion Service (Römisches ↔ Arabisch)
+    ↓
+Arithmetic Engine (+, -, *, /)
+    ↓
+History Service (In-Memory, max 10 Einträge)
+    ↓
+UI Update (Live-Region für Accessibility)
+```
+
+---
+
+## 📝 Spezifikation & Dokumentation
+
+**Single Source of Truth:** `spezifikation/Architekturkonzept.md`  
+**User Stories:** `spezifikation/userStories/[NUMMER]-Title.md`  
+**UI-Spezifikation:** `spezifikation/ui/`  
+**Code Reviews:** `spezifikation/review/`
+
+---
+
+## ⚙️ Technische Entscheidungen
+
+| # | Entscheidung | Begründung |
+|---|--------------|------------|
+| 1 | Tauri (Webview) | Kleines Bundle, geringer RAM, nutzt Web-Stack |
+| 2 | PreventDefault + visuelles Feedback | Garantiert keine illegalen Zeichen + UX |
+| 3 | Zustand für State | Minimalistisch, leichtgewichtig, React-Integration |
+| 4 | Custom CSS (kein Framework) | Volle Kontrolle über "römischen" Look, minimaler Size |
+| 5 | Playwright für E2E | Cross-platform, Accessibility-Checks, Tauri-Support |
+| 6 | Keine History-Persistenz | Intentional: In-Memory nur, kein Storage-Overhead |
+
+---
+
+## 🎯 Projekt-Ziele
+
+1. **Funktionale Korrektheit:** Alle 7 User Stories vollständig implementiert
+2. **Accessibility:** WCAG 2.1 AA konform
+3. **Performance:** Alle Constraints eingehalten
+4. **Code-Qualität:** 0 ESLint-Warnings, 100% TypeScript strict
+5. **Test-Coverage:** Alle User Stories durch E2E-Tests abgedeckt
